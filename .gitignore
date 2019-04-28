@@ -1,0 +1,12 @@
+.git/
+!.git/HEAD
+!.git/refs/
+
+node_modules/
+.next/
+
+.DS_Store
+.env
+
+*.swp
+
