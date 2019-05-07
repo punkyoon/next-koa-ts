@@ -5,9 +5,8 @@
   "scripts": {
     "build": "next build && tsc --project tsconfig.server.json",
     "start:local": "node .next/server",
-    "start:dev": "pm2-dev start pm2.dev.config.json",
-    "temp": "pm2 start .next/server --watch --no-daemon",
-    "start:prod": "pm2-runtime start pm2.prod.config.json"
+    "start:dev": "pm2 start pm2.dev.config.json",
+    "start:prod": "pm2 start pm2.prod.config.json"
   },
   "author": "Jiyoon Ha <punkkid001@gmail.com> (https://github.com/punkyoon)",
   "license": "Unlicense",
