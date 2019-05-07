@@ -1,4 +1,6 @@
+import bunyan from "bunyan";
 import Koa from "koa";
+import koaBunyanLogger from "koa-bunyan-logger";
 import Router from "koa-router";
 import next from "next";
 
@@ -10,6 +12,11 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = new Koa();
   const router = new Router();
+
+  server.use(koaBunyanLogger(bunyan.createLogger({
+	name: 'next-koa-ts', level: 'debug', serializers: bunyan.stdSerializers
+  })));
+  server.use(koaBunyanLogger.requestLogger());
 
   router.get("/about", async ctx => {
     await app.render(ctx.req, ctx.res, "/about", ctx.query);
