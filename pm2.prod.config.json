@@ -8,8 +8,10 @@
       "watch": false,
       "exec_mode": "cluster",
       "instances": "max",
-      "NODE_ENV": "production",
-      "PORT": 3000
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 3000
+      }
     }
   ]
 }
