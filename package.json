@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Next.js + Koa + Typescript",
   "scripts": {
-    "build": "next build && tsc --project tsconfig.server.json",
+    "build": "NODE_ENV=development next build && tsc --project tsconfig.server.json",
     "start:local": "node .next/server",
     "start:dev": "pm2 start pm2.dev.config.json",
     "start:prod": "pm2 start pm2.prod.config.json"
@@ -22,8 +22,13 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
     "@types/koa-bunyan-logger": "^2.1.0",
+    "axios": "^0.18.0",
     "koa-bunyan-logger": "^2.1.0",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
     "next": "^8.1.0",
     "pm2": "^3.5.0",
     "react": "^16.8.6",
